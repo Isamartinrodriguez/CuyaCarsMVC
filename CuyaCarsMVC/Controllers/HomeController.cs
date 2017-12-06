@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuyaCarsMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +14,13 @@ namespace CuyaCarsMVC.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Coche()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            
+            Coche elcoche = new Coche();
+            elcoche.Matricula = "12345";
+            ViewBag.Coche = elcoche ;
+            return View("Coche", elcoche);
         }
 
         public ActionResult Contact()
